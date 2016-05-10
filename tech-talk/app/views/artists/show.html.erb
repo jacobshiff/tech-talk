@@ -3,6 +3,9 @@
 <p>
   <strong>Name:</strong>
   <%= @artist.name %>
+  <strong>Album:</strong>
+  <%= @artist.albums.first.name %>
+
 </p>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |

@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 20160510012026) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.string   "artist_image_url"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "songs", force: :cascade do |t|
