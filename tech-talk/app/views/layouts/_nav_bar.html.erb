@@ -2,33 +2,55 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-tech-talk" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+
+      <!-- Logo -->
       <a class="navbar-brand" href="<%= root_path %>"><img src= "https://assets.digitalocean.com/blog/flatiron-school-logo.png" height="150%"></a>
+
     </div>
 
 
 
       <div class="collapse navbar-collapse" id="navbar-collapse-tech-talk">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <!-- Home Link -->
+        <li> 
+          <a class="active" href="<%= root_url %>"/><span class="glyphicon glyphicon-home"></span></a>
+        </li>
+
+        <!-- Artists Dropdown -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="artists_path" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artists<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <% Artist.all.each do |artist| %>
+              <li> <%= link_to artist.name, artist_path(artist) %> </li>
+            <% end %>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="<%= new_artist_path %>">Create New Artist</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
+        
+        <!-- Albums Dropdown -->
+        <li class="dropdown">
+          <a href="root" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Albums<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% Album.all.each do |album| %>
+              <li> <%= link_to album.name, album_path(album) %> </li>
+            <% end %>
+            <li role="separator" class="divider"></li>
+            <li><a href="<%= new_album_path %>">Create New Album</a></li>
+            <li role="separator" class="divider"></li>
+          </ul>
+        </li>
+
+
       </ul>
 
     </div><!-- /.navbar-collapse -->
