@@ -2,13 +2,12 @@
 
 <h1>Listing Albums</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Genre</th>
       <th>Artist</th>
-      <th>Album url</th>
+      <th>Album image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +16,8 @@
     <% @albums.each do |album| %>
       <tr>
         <td><%= album.name %></td>
-        <td><%= album.genre %></td>
-        <td><%= album.artist_id %></td>
-        <td><%= album.album_url %></td>
+        <td><%= album.artist.name %></td>
+        <td><img src="<%= album.album_url %>"</td>
         <td><%= link_to 'Show', album %></td>
         <td><%= link_to 'Edit', edit_album_path(album) %></td>
         <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
