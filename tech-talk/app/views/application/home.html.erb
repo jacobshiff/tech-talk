@@ -1,39 +1,26 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>Album Index</title>
+<section class="jumbotron text-xs-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Welcome to Beef by Flatiron<sup>®</sup></h1>
+    <p class="lead text-muted">All your favorite music. All the time.</p>
+    <p>
+      <a href="<%= albums_path %>" class="btn btn-primary">Browse Albums</a>
+      <a href="<%= new_album_path %>" class="btn btn-secondary">Add New Album</a>
+    </p>
+  </div>
+</section>
 
-  <body>
-
-    <section class="jumbotron text-xs-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Welcome to Beef by Flatiron<sup>®</sup></h1>
-        <p class="lead text-muted">All your favorite music. All the Time</p>
-        <p>
-          <a href="<%= albums_path %>" class="btn btn-primary">Browse Albums</a>
-          <a href="<%= new_album_path %>" class="btn btn-secondary">Add New Album</a>
-        </p>
-      </div>
-    </section>
-
-    <div class="album text-muted">
-      <div class="container">
-        <div class="row">
+<div class="album text-muted">
+  <div class="container">
+    <div class="row">
       <% @albums.each do |album| %>
-          <div class="col-md-3 col-sm-6">
-            <img width = "100%" align="middle" class="center-block" src="<%= album.album_url %>">
-            <h4 align="middle"><%= link_to "#{album.name} - #{album.artist.name}", album_path(album) %></h4>
-          </div>
-        <% end %>
-
-          
-          </div>
-
-  </body>
-</html>
+      <div class="col-md-3 col-sm-6">
+        <a href="<%= album_path(album) %>" class="thumbnail">
+        <img width = "100%" align="middle" class="center-block" src="<%= album.album_url %>">
+        </a>
+        <h4 align="middle"><%= link_to "#{album.name} - #{album.artist.name}", album_path(album) %></h4>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

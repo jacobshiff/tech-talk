@@ -25,16 +25,16 @@ class AlbumsController < ApplicationController
   # POST /albums.json
   def create
     @album = Album.new(album_params)
+    flash[:success] = 'Album was successfully created.'
+    redirect_to album_path(@album)
 
-    respond_to do |format|
-      if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
-      else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @album.save
+    #     format.html { redirect_to @album, flash[:success] = 'Album was successfully created.' }
+    #   else
+    #     format.html { render :new }
+    #   end
+    # end
   end
 
   # PATCH/PUT /albums/1

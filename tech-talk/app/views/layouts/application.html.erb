@@ -9,6 +9,10 @@
 </head>
 <body>
 <%= render 'layouts/nav_bar' %>
+<!-- content -->
+<% flash.each do |type, message| %>
+  <div class="alert alert-<%= type %>" role="alert"><%= message %></div>
+<% end %>
 <div class="container">
 
 <%= yield %>
