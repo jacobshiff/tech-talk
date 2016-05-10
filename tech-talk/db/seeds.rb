@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-@daftpunk = Artist.create(name: "Daft Punk", artist_image_url: "http://www.billboard.com/files/styles/article_main_image/public/media/daft-punk-grammy-2014-650f.jpg")
+@daftpunk = Artist.create(name: "Daft Punk", artist_image_url: "http://cdn.pastemagazine.com/www/articles/daftpunk2.jpg")
 @random_access_memories = Album.create(name: "Random Access Memories", artist: @daftpunk, album_url: "https://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg")
 @give_life_back_to_music = Song.create(name: "Give Life Back to Music", album: @random_access_memories)
 @the_game_of_love = Song.create(name: "The Game of Love", album: @random_access_memories)
@@ -22,7 +22,7 @@
 @doin_it_right = Song.create(name: "Doin' It Right", album: @random_access_memories)
 @contact = Song.create(name: "Contact", album: @random_access_memories)
 
-@beyonce = Artist.create(name: "Beyoncé", artist_image_url: "http://cdn.playbuzz.com/cdn/ca964332-e84f-4d21-8e7a-69486b4462e5/ccf4a3af-d80e-4513-b4b5-9d8f14c4f06c.jpg")
+@beyonce = Artist.create(name: "Beyoncé", artist_image_url: "https://a1-images.myspacecdn.com/images04/2/2a979ebc42d741a7903a1cbcf9b26f34/300x300.jpg")
 @lemonade = Album.create(name: "Lemonade", artist: @beyonce, album_url: "https://upload.wikimedia.org/wikipedia/en/5/53/Beyonce_-_Lemonade_%28Official_Album_Cover%29.png")
 @pray_you_catch_me = Song.create(name: "Pray You Catch Me", album: @lemonade)
 @hold_up = Song.create(name: "Hold Up", album: @lemonade)
@@ -37,7 +37,7 @@
 @all_night = Song.create(name: "All Night", album: @lemonade)
 @formation = Song.create(name: "Formation", album: @lemonade)
 
-@radiohead = Artist.create(name: "Radiohead", artist_image_url: "http://media.gettyimages.com/photos/rock-band-radiohead-are-photographed-for-select-magazine-on-february-picture-id467333640")
+@radiohead = Artist.create(name: "Radiohead", artist_image_url: "http://assets.rollingstone.com/assets/images/artists/radiohead.jpg")
 @a_moon_shaped_pool = Album.create(name: "A Moon Shaped Pool", artist: @radiohead, album_url: "https://upload.wikimedia.org/wikipedia/en/c/c1/A_Moon_Shaped_Pool.jpg")
 @burn_the_witch = Song.create(name: "Burn the Witch", album: @a_moon_shaped_pool)
 @daydreaming = Song.create(name: "Daydreaming", album: @a_moon_shaped_pool)
@@ -51,7 +51,7 @@
 @tink_tailor = Song.create(name: "Tinker Tailor Soldier Sailor Rich Man Poor Man Beggar Man Thief", album: @a_moon_shaped_pool)
 @true_love_waits = Song.create(name: "True Love Waits", album: @a_moon_shaped_pool)
 
-@kendrick_lamar = Artist.create(name: "Kendrick Lamar", artist_image_url: "http://www.okayplayer.com/wp-content/uploads/2015/06/kendrick-lamar-reacts-to-tupac-interview-little-simz-video.jpg")
+@kendrick_lamar = Artist.create(name: "Kendrick Lamar", artist_image_url: "http://artcreationforever.com/images/kendrick-lamar/kendrick-lamar-06.jpg")
 @to_pimp_a_butterfly = Album.create(name: "To Pimp a Butterfly", artist: @kendrick_lamar, album_url: "https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png")
 @wesleys_theory = Song.create(name: "Wesley's Theory", album: @to_pimp_a_butterfly)
 @for_free = Song.create(name: "For Free? (Interlude)", album: @to_pimp_a_butterfly)

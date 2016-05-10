@@ -1,12 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-  <strong>Album:</strong>
-  <%= @artist.albums.first.name %>
-
-</p>
-
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6" align="middle" class="center-block" >
+      <h3>Artist</h3><br>
+      <h4><%= @artist.name %></h4><br>
+      <img src="<%= @artist.artist_image_url %>" class="img-circle" style="width: 50%">
+    </div>
+    <div class="col-md-6" align="middle" class="center-block">
+    <h3>Albums</h3><br>
+    <div id="accordion" role="tablist" aria-multiselectable="false">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+    <%= @artist.albums.first.name %> </a></h4></div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+     <ol>
+      <% @artist.albums.first.songs.each do |song| %>
+        <li><%= song.name %></li>
+        <% end %>
+      </ol>
+    </div>
+  </div>
+  </div>
+</div>
