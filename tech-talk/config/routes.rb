@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :artists
   resources :albums
   get '/', to: 'application#home', as: 'root'
+  get '/grids', to: 'application#grid_demo'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
