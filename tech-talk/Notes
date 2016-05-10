@@ -1,0 +1,3 @@
+Albums name:string genre:string artist_id:integer album_url:string
+Artists name:string
+Song name:string album_id:integer song_url:string
