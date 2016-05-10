@@ -51,7 +51,7 @@
 @tink_tailor = Song.create(name: "Tinker Tailor Soldier Sailor Rich Man Poor Man Beggar Man Thief", album: @a_moon_shaped_pool)
 @true_love_waits = Song.create(name: "True Love Waits", album: @a_moon_shaped_pool)
 
-@kendrick_lamar = Artist.create(name: "Kendrick Lamar", artist_image_url: "http://artcreationforever.com/images/kendrick-lamar/kendrick-lamar-06.jpg")
+@kendrick_lamar = Artist.create(name: "Kendrick Lamar", artist_image_url: "http://www.mtv.com/crop-images/2015/04/02/kendrick_animation_04_002.png")
 @to_pimp_a_butterfly = Album.create(name: "To Pimp a Butterfly", artist: @kendrick_lamar, album_url: "https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png")
 @wesleys_theory = Song.create(name: "Wesley's Theory", album: @to_pimp_a_butterfly)
 @for_free = Song.create(name: "For Free? (Interlude)", album: @to_pimp_a_butterfly)
