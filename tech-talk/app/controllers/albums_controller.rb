@@ -25,16 +25,18 @@ class AlbumsController < ApplicationController
   # POST /albums.json
   def create
     @album = Album.new(album_params)
+    @album.artist = Artist.find_or_create_by(name: params[:album][:artist])
+    @album.save
+    flash[:success] = 'Album was successfully created.'
+    redirect_to album_path(@album)
 
-    respond_to do |format|
-      if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
-      else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @album.save
+    #     format.html { redirect_to @album, flash[:success] = 'Album was successfully created.' }
+    #   else
+    #     format.html { render :new }
+    #   end
+    # end
   end
 
   # PATCH/PUT /albums/1
@@ -69,6 +71,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:name, :genre, :artist_id, :album_url)
+      params.require(:album).permit(:name, :genre, :album_url)
     end
 end
